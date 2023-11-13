@@ -1,14 +1,22 @@
 import Header from "./@header/page";
 import Footer from "./@footer/page";
 
+import './globals.css'
+
+
 const Layout = (props: {
   children?: React.ReactNode
 }) => (
-  <>
-  <Header/>
-  { props?.children }
-  <Footer/>
-  </>
+  <html lang="en">
+    <head />
+    <body>
+    <Header/>
+      <main>
+        { props?.children }
+      </main>
+    <Footer/>
+  </body>
+  </html>
 )
 
 export default Layout;
