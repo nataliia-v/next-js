@@ -1,8 +1,13 @@
+import Head from 'next/head';
+
 const Users = () => {
   return (
-    <h2>
-      USERS LIST
-    </h2>
+    <div>
+      <Head><title>Users</title></Head>
+      <h2>
+         USERS LIST
+      </h2>
+    </div>
   )
 }
 

@@ -1,6 +1,7 @@
 'use client'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link';
+import Image from 'next/image'
 
 import styles from './Navbar.module.scss';
 
@@ -15,7 +16,7 @@ const Navbar = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.logo}>
-        Navbar
+        <Image width={70} height={70} src='./logo.svg' alt={'logo'} />
       </div>
       <div className={styles.links}>
         {
