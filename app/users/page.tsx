@@ -1,4 +1,10 @@
+import { Metadata } from 'next';
 import Head from 'next/head';
+
+export const metadata: Metadata = {
+  title: 'Users',
+  description: 'Product users',
+}
 
 const Users = () => {
   return (
