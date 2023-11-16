@@ -1,7 +1,4 @@
-"use client";
 import Head from 'next/head';
-
-import { useState, useEffect } from 'react'
 
 interface IUser {
   id: number;
@@ -27,18 +24,20 @@ interface IUser {
   }
 }
 
-const Users = () => {
-  const [ users, setUsers ] = useState<IUser[] | null>( null );
-
-  useEffect(()=> {
-    const fetchData = async () => {
-      const response = await fetch('https://jsonplaceholder.typicode.com/users');
+export const getStaticProps = async () => {
+  const response = await fetch('https://jsonplaceholder.typicode.com/users');
       const data = await response.json();
-      setUsers( data );
-    };
-    fetchData();
-  }, []);
 
+      return {
+        props: { users: data }
+      }
+};
+
+export interface UsersProps {
+  users: IUser[];
+}
+
+const Users: React.FC<UsersProps> = ({ users }) => {
   return (
     <div>
       <Head><title>Users</title></Head>
