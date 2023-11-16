@@ -1,20 +1,19 @@
 import { Metadata } from 'next';
-import Head from 'next/head';
+
+import Users from './Users';
 
 export const metadata: Metadata = {
   title: 'Users',
   description: 'Product users',
 }
 
-const Users = () => {
+const UsersPage = () => {
+
   return (
-    <div>
-      <Head><title>Users</title></Head>
-      <h2>
-         USERS LIST
-      </h2>
-    </div>
+    <>
+    <Users/>
+    </>
   )
 }
 
-export default Users;
+export default UsersPage;
